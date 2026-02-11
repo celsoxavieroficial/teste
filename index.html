@@ -1,5 +1,14 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meu Novo Site</title>
+</head>
+
 <body>
   <h1>Funcionou ✅</h1>
+
   <p id="status">Pronto para clicar.</p>
   <p>Cliques: <strong id="contador">0</strong></p>
 
@@ -14,26 +23,22 @@
     const status = document.querySelector("#status");
     const contadorEl = document.querySelector("#contador");
 
-    // carrega do navegador (ou 0 se não existir)
     let cliques = Number(localStorage.getItem("cliques")) || 0;
     contadorEl.textContent = cliques;
 
     btn.addEventListener("click", () => {
       cliques++;
       contadorEl.textContent = cliques;
-      localStorage.setItem("cliques", cliques);
+      localStorage.setItem("cliques", String(cliques));
       status.textContent = "Clique detectado ✅ (JS funcionando)";
     });
 
     resetBtn.addEventListener("click", () => {
-  cliques = 0;
-  contadorEl.textContent = cliques;
-  localStorage.setItem("cliques", cliques);
-  status.textContent = "Pronto para clicar.";
+      cliques = 0;
+      contadorEl.textContent = cliques;
+      localStorage.setItem("cliques", String(cliques));
+      status.textContent = "Zerado ✅";
     });
   </script>
 </body>
-
-
-<!-- TESTE -->
-<!-- TESTE -->
+</html>
