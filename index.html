@@ -1,0 +1,37 @@
+<body>
+  <h1>Funcionou ✅</h1>
+  <p id="status">Pronto para clicar.</p>
+  <p>Cliques: <strong id="contador">0</strong></p>
+
+  <p>Meu primeiro site com VS Code + Live Server.</p>
+
+  <button id="btn">Clique aqui</button>
+  <button class="reset">Zerar contador</button>
+
+  <script>
+    const btn = document.querySelector("#btn");
+    const resetBtn = document.querySelector(".reset");
+    const status = document.querySelector("#status");
+    const contadorEl = document.querySelector("#contador");
+
+    // carrega do navegador (ou 0 se não existir)
+    let cliques = Number(localStorage.getItem("cliques")) || 0;
+    contadorEl.textContent = cliques;
+
+    btn.addEventListener("click", () => {
+      cliques++;
+      contadorEl.textContent = cliques;
+      localStorage.setItem("cliques", cliques);
+      status.textContent = "Clique detectado ✅ (JS funcionando)";
+    });
+
+    resetBtn.addEventListener("click", () => {
+  cliques = 0;
+  contadorEl.textContent = cliques;
+  localStorage.setItem("cliques", cliques);
+  status.textContent = "Pronto para clicar.";
+    });
+  </script>
+</body>
+
+
