@@ -1,44 +1,32 @@
 <!doctype html>
-<html lang="pt">
+<html lang="pt-br">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Meu Novo Site</title>
+  <title>Celso Xavier</title>
+  <meta name="description" content="Celso Xavier — Guionista/Roteirista e autor. Projetos em desenvolvimento." />
+
+  <link rel="stylesheet" href="assets/site.css" />
 </head>
 
-<body>
-  <h1>Funcionou ✅</h1>
+<body class="home">
+  <div class="wrap">
+    <header class="site-header">
+      <a class="top-link" href="sobre/index.html">Sobre</a>
+    </header>
 
-  <p id="status">Pronto para clicar.</p>
-  <p>Cliques: <strong id="contador">0</strong></p>
+    <main class="hero" aria-label="Página inicial">
+      <div class="card-image">
+        <img src="assets/img/hero.png" alt="Retrato minimalista com lírio escuro no peito" />
 
-  <p>Meu primeiro site com VS Code + Live Server.</p>
+        <div class="hero-overlay">
+          <h1 class="hero-title">Celso Xavier</h1>
+          <p class="hero-tag">Guionista/Roteirista e autor — Fantástico (em desenvolvimento).</p>
 
-  <button id="btn">Clique aqui</button>
-  <button class="reset">Zerar contador</button>
-
-  <script>
-    const btn = document.querySelector("#btn");
-    const resetBtn = document.querySelector(".reset");
-    const status = document.querySelector("#status");
-    const contadorEl = document.querySelector("#contador");
-
-    let cliques = Number(localStorage.getItem("cliques")) || 0;
-    contadorEl.textContent = cliques;
-
-    btn.addEventListener("click", () => {
-      cliques++;
-      contadorEl.textContent = cliques;
-      localStorage.setItem("cliques", String(cliques));
-      status.textContent = "Clique detectado ✅ (JS funcionando)";
-    });
-
-    resetBtn.addEventListener("click", () => {
-      cliques = 0;
-      contadorEl.textContent = cliques;
-      localStorage.setItem("cliques", String(cliques));
-      status.textContent = "Zerado ✅";
-    });
-  </script>
+          <a class="projects-link" href="projetos/index.html">Projetos</a>
+        </div>
+      </div>
+    </main>
+  </div>
 </body>
 </html>
