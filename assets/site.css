@@ -114,3 +114,73 @@ a:hover{ border-bottom-color:var(--fg); }
   border-color:rgba(242,242,245,.45);
   background:rgba(0,0,0,.35);
 }
+/* ===== Estilo A: literário/clássico ===== */
+
+:root{
+  --fg:#f1f0ed;
+  --muted:rgba(241,240,237,.70);
+  --line:rgba(241,240,237,.14);
+  --line-strong:rgba(241,240,237,.32);
+}
+
+html, body{
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:geometricPrecision;
+}
+
+/* título serifado (assinatura) */
+.hero-title{
+  font-family:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua","Times New Roman",serif;
+  font-weight:600;
+  letter-spacing:.6px;
+  line-height:1.03;
+}
+
+/* subtítulo + links em sans (contraste) */
+.hero-tag,
+.top-link,
+.projects-link{
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Ubuntu,Arial,sans-serif;
+}
+
+.hero-tag{
+  color:var(--muted);
+  letter-spacing:.01em;
+  line-height:1.6;
+  max-width:62ch;
+}
+
+/* "Sobre" editorial */
+.top-link{
+  font-size:12.5px;
+  letter-spacing:.20em;
+  text-transform:uppercase;
+  color:rgba(241,240,237,.78);
+  border-bottom:1px solid transparent;
+  padding-bottom:2px;
+}
+
+.top-link:hover{
+  color:rgba(241,240,237,.96);
+  border-bottom-color:rgba(241,240,237,.42);
+}
+
+/* "Projetos" com presença */
+.projects-link{
+  letter-spacing:.26em;
+  border-color:rgba(241,240,237,.18);
+  background:rgba(0,0,0,.22);
+}
+
+.projects-link:hover{
+  border-color:rgba(241,240,237,.38);
+  background:rgba(0,0,0,.30);
+}
+
+/* overlay um pouco mais “cinema” */
+.card-image::after{
+  background:
+    radial-gradient(ellipse at 50% 40%, rgba(0,0,0,.08), rgba(0,0,0,.55)),
+    linear-gradient(to bottom, rgba(0,0,0,.18), rgba(0,0,0,.68));
+}
