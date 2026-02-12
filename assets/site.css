@@ -199,3 +199,12 @@ html, body{
     width: calc(100% - 28px);
   }
 }
+
+/* Respiro real nas páginas internas (desktop e mobile) */
+.page-wrap,
+.wrap-projects {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 28px clamp(18px, 6vw, 88px) 56px;
+}
